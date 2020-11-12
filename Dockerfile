@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER Bo Lin Yu (yubolin@sina.com)
 # install binary and remove cache
 RUN apt-get update \
-    && apt-get install -y iperf3 net-tools iputils-ping iproute2 tcpdump netcat-traditional curl apache2-utils build-essential libssl-dev git\
+    && apt-get install -y iperf3 net-tools iputils-ping iproute2 tcpdump netcat-traditional curl apache2-utils build-essential libssl-dev git wget\
     && rm -rf /var/lib/apt/lists/*
 
 # Expose the default iperf3 server port
