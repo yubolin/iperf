@@ -14,9 +14,11 @@ RUN apt-get update \
 #ENTRYPOINT ["iperf3"]
 
 # install wrk
-RUN git clone https://github.com/wg/wrk.git wrk \
+RUN git clone https://github.com/yubolin/wrk.git wrk \
     && cd wrk \
     && make \
     && cp wrk /usr/local/bin
+
+ADD ./longrun_wrk.sh
 
 
