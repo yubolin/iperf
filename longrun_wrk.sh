@@ -33,5 +33,5 @@ do
            continue
         fi
     done
-    sleep 1m
+    sleep 10m
 done
