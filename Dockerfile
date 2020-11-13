@@ -20,5 +20,4 @@ RUN git clone https://github.com/yubolin/wrk.git wrk \
     && cp wrk /usr/local/bin
 
 ADD ./longrun_wrk.sh
-
-
+ADD ./url.txt
