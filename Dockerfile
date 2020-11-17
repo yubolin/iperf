@@ -18,6 +18,6 @@ RUN git clone https://github.com/yubolin/wrk.git wrk \
     && cd wrk \
     && make \
     && cp wrk /usr/local/bin
-
-ADD ./longrun_wrk.sh
-ADD ./url.txt
+WORKDIR /home/test
+ADD ./longrun_wrk.sh /home/test/ 
+ADD ./url.txt /home/test/
