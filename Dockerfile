@@ -20,6 +20,6 @@ RUN git clone https://github.com/yubolin/wrk.git wrk \
     && cp wrk /usr/local/bin
 
 WORKDIR /home
-ADD ./longrun_wrk.sh /home/
-ADD ./url.txt /home/
-ADD ./hlclt-dstat.sh /home/
+ADD ./longrun_wrk.sh /opt/
+ADD ./url.txt /opt/
+ADD ./hlclt-dstat.sh /opt/
