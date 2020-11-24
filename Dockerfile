@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
-MAINTAINER Bo Lin Yu (yubolin@sina.com)
+MAINTAINER Bo Lin Yu (yubolin@cn.ibm.com)
 # install binary and remove cache
 RUN apt-get update \
-    && apt-get install -y iperf3 net-tools iputils-ping iproute2 tcpdump netcat-traditional curl apache2-utils build-essential libssl-dev git wget traceroute\
+    && apt-get install -y iperf3 net-tools iputils-ping iproute2 tcpdump netcat-traditional curl apache2-utils build-essential libssl-dev git wget traceroute dstat\
     && rm -rf /var/lib/apt/lists/*
 
 # Expose the default iperf3 server port
@@ -19,5 +19,7 @@ RUN git clone https://github.com/yubolin/wrk.git wrk \
     && make \
     && cp wrk /usr/local/bin
 
-ADD ./longrun_wrk.sh
-ADD ./url.txt
+WORKDIR /home/test
+ADD ./longrun_wrk.sh /home/test/
+ADD ./url.txt /home/test/
+ADD ./hlclt-dstat.sh /home/test/

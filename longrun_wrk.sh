@@ -6,12 +6,12 @@
 #
 # sh longrun_wrk.sh threads(-t) connections(-c)  duration(-d) url(-u)  interval(-i)
 # example:
-# sh longrun_wrk.sh 8 8 30s 
-# #wrk -t8 -c8 -d30s --csv  http://169.62.34.114/100MB.bin |awk '{if(NR>1)print}' >>result.csv
+# sh longrun_wrk.sh 1 1 20s 
+# #wrk -t1 -c1 -d20s --csv  http://169.62.34.114/100MB.bin |awk '{if(NR>1)print}' >>./test/test_wrk.csv
 ######################################################################
 
 
-for((i=0;i<=280;i++))
+for((i=0;i<=190;i++))
 do
     for u in $(cat url.txt)
     do
@@ -33,5 +33,6 @@ do
            continue
         fi
     done
-    sleep 10m
+    sleep 15m
 done
+
