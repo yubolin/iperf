@@ -19,7 +19,7 @@ RUN git clone https://github.com/yubolin/wrk.git wrk \
     && make \
     && cp wrk /usr/local/bin
 
-WORKDIR /home/test
-ADD ./longrun_wrk.sh /home/test/
-ADD ./url.txt /home/test/
-ADD ./hlclt-dstat.sh /home/test/
+WORKDIR /home
+ADD ./longrun_wrk.sh /home/
+ADD ./url.txt /home/
+ADD ./hlclt-dstat.sh /home/
